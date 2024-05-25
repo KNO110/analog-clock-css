@@ -1,0 +1,76 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f1f1f1;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 10px solid #696969;
+    border-radius: 50%;
+}
+
+.hour-hand, .minute-hand {
+    position: absolute;
+    background-color: #424242;
+    transform-origin: 50% 100%;
+    top: 50%;
+    left: 50%;
+}
+
+.hour-hand {
+    width: 6px;
+    height: 70px;
+    top: 30px;
+    left: 100px;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    transform: rotate(0deg);
+    animation: rotate-hour 720s infinite;
+    z-index: 3;
+}
+
+.minute-hand {
+    width: 4px;
+    height: 70px;
+    top: 30px;
+    left: 100px;
+    border-radius: 4px;
+    transform: rotate(0deg);
+    animation: rotate-minute 60s infinite;
+    z-index: 3;
+}
+
+.center-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #2a2a2a;
+    border-radius: 50%;
+    top: 90px;
+    left: 97px;
+    z-index: 5;
+}
+
+@keyframes rotate-hour {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-minute {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
